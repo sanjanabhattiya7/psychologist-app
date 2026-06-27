@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset("assets/images/logo.png",
-              height:200,
+              height:180,
               width: 250),
 
               Text("Wellhope Hiring",
