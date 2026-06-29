@@ -32,18 +32,19 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/logo.png",
-              height:180,
-              width: 250),
+              Image.asset("assets/images/logo1.png",
+              height:300,
+              width: 300),
 
-              Text("Wellhope Hiring",
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFF2D5356),
-                fontFamily: "AbrilFatface",
-                ),
-              ),
+              
+              // Text("Wellhope Hiring",
+              // style: TextStyle(
+              //   fontSize: 40,
+              //   fontWeight: FontWeight.w400,
+              //   color: Color(0xFF2D5356),
+              //   fontFamily: "AbrilFatface",
+              //   ),
+              // ),
             ],
           ),
         ),
