@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:psycholoist/theme/text.dart';
 import 'package:psycholoist/feature/auth/screen/email_screen.dart';
+import 'package:psycholoist/feature/auth/screen/login_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+
+class EmailScreen extends StatefulWidget {
+  const EmailScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<EmailScreen> createState() => _EmailScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _EmailScreenState extends State<EmailScreen> {
   bool isMobileSelected = true;
   bool isChacked = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFFFCF3),
       body: SafeArea(
-        child: Column(
+        child:Column(
           children: [
             SizedBox(height: 40),
             Center(
@@ -39,40 +40,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          setState(() {
-                            isMobileSelected = true;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          decoration: BoxDecoration(
-                            color: isMobileSelected
-                                ? Color(0xFF2D5356)
-                                : Colors.transparent,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Mobile",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: isMobileSelected
-                                    ? Color(0xFFFFFFFF)
-                                    : const Color(0xFF2D5356),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    Expanded(
-                      child: GestureDetector(
-                        onTap: () {
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context) => const EmailScreen(),),
+                            MaterialPageRoute(builder: (context) => const LoginScreen(),),
                           );
                           setState(() {
                             isMobileSelected = false;
@@ -88,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           child: Center(
                             child: Text(
-                              "Email",
+                              "Mobile",
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -101,22 +71,66 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => const EmailScreen(),),
+                          );
+                          setState(() {
+                            isMobileSelected = true;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          decoration: BoxDecoration(
+                            color: isMobileSelected
+                                ? Color(0xFF2D5356)
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Email",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: isMobileSelected
+                                    ? Color(0xFFFFFFFF)
+                                    : const Color(0xFF2D5356),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
                   ],
                 ),
+
+
               ),
+
             ),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             HeadlineText1(text: "Welcome Back !"),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             SubHeading(text: "Enter your existing account details."),
 
-            const SizedBox(height: 60),
+            const SizedBox(height: 20),
             CustomTextField(
-              label: "Number",
-              hintText: "+91 0000000000",
-              keyboardType: TextInputType.phone,
+              label: "Email Id",
+              hintText: "abc@gmail.com",
+              keyboardType: TextInputType.emailAddress,
+            ),
+
+            CustomTextField(
+              label: "Password",
+              hintText: "abc@gmail.com",
+              keyboardType: TextInputType.visiblePassword,
             ),
 
             const SizedBox(height: 10),
@@ -142,8 +156,6 @@ class _LoginScreenState extends State<LoginScreen> {
               },
             ),
 
-            const SizedBox(height: 20),
-
             Container(
               height: 60,
               width: 343,
@@ -166,10 +178,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-
             ),
 
-            const SizedBox(height: 260),
+            const SizedBox(height: 20),
+
+            Text("Forget Password?",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Color(0xFF2D5356),
+              fontFamily: "AlegreyaSans",
+            ),
+            ),
+
+
+            const SizedBox(height: 200),
             Text(
               "Don’t have account? Sign Up ",
               style: TextStyle(fontSize: 18,
@@ -178,9 +201,12 @@ class _LoginScreenState extends State<LoginScreen> {
               fontFamily: "AlegreyaSans-Bold"), 
             
             ),
+
+
+
           ],
+         ),
         ),
-      ),
     );
   }
 }
