@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:psycholoist/feature/auth/screen/signup_screen.dart';
 import 'package:psycholoist/theme/text.dart';
 import 'package:psycholoist/feature/auth/screen/email_screen.dart';
 
@@ -156,13 +157,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               child: Center(
-                child: Text(
-                  "Sign In",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: Color(0xFFFFFFFF),
-                    fontFamily: "AlegreyaSans",
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) =>const SignupScreen(),),
+                      );
+                  },
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: Color(0xFFFFFFFF),
+                      fontFamily: "AlegreyaSans",
+                    ),
                   ),
                 ),
               ),

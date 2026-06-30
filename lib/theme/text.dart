@@ -88,7 +88,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -112,8 +112,8 @@ class CustomTextField extends StatelessWidget {
             decoration: InputDecoration(
               hintText: hintText,
               hintStyle: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
                 fontFamily: "Abril Fatface",
                 color: Color.fromARGB(255, 148, 165, 167),
               ),
@@ -182,7 +182,7 @@ class CustomCheckbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -243,3 +243,69 @@ class CustomCheckbox extends StatelessWidget {
     );
   }
 }
+
+
+//primary button widget 
+class CustomButton extends StatelessWidget{
+  final String text;
+  final VoidCallback onTap;
+  final Color backgroundColor;
+  final Color textColor;
+  final double height;
+  final double? widht;
+  final double borderRadius;
+  final double fontSize;
+  final FontWeight fontWeight;
+
+  const CustomButton({
+    super.key,
+    required this.text,
+    required this.onTap,
+    this.backgroundColor = const Color(0xFF2D5356),
+     this.textColor = Colors.white,
+    this.height = 60,
+    this.widht = double.infinity,
+    this.borderRadius = 8,
+    this.fontSize = 16,
+    this.fontWeight = FontWeight.w800,
+  });
+
+  @override
+  Widget build(BuildContext context){
+    return Padding(
+      padding: const EdgeInsets.only(top: 16, right: 8, left: 8),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(borderRadius),
+        onTap: onTap,
+        child: Container(
+          height: height,
+          width: widht,
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(borderRadius),
+            border: Border.all(
+              color: Color(0xFF2D5356),
+              width: 1,
+            ),
+          ),
+      
+          child: Center(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+                color: textColor,
+                fontFamily: "AlegreyaSans",
+              ),
+            ),
+          ),
+          
+        ),
+      
+      ),
+    );
+  }
+
+}
+

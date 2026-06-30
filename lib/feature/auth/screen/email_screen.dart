@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:psycholoist/feature/auth/screen/signup_screen.dart';
 import 'package:psycholoist/theme/text.dart';
 import 'package:psycholoist/feature/auth/screen/email_screen.dart';
 import 'package:psycholoist/feature/auth/screen/login_screen.dart';
@@ -156,28 +157,13 @@ class _EmailScreenState extends State<EmailScreen> {
               },
             ),
 
-            Container(
-              height: 60,
-              width: 343,
-              decoration: BoxDecoration(
-                color: Color(0xFF2D5356),
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: Color(0xFF29423D),
-                  width: 1.5,
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  "Sign In",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: Color(0xFFFFFFFF),
-                    fontFamily: "AlegreyaSans",
-                  ),
-                ),
-              ),
+            CustomButton(text: "Sign In", 
+            onTap: () {
+              // Navigator.pushReplacement(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => )
+              //   );
+            },
             ),
 
             const SizedBox(height: 20),
