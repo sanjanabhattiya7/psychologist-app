@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:psycholoist/feature/auth/screen/email_screen.dart';
 import 'package:psycholoist/theme/text.dart';
 
 class EmailverificationScreen extends StatefulWidget {
@@ -28,7 +29,10 @@ class _EmailverificationScreenState extends State<EmailverificationScreen> {
               ),
               child: IconButton(
                 onPressed: (){
-                  Navigator.pop(context);
+                 Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => EmailScreen(),),
+                  );
                 }, 
                 icon:const Icon(Icons.arrow_back),),
             ),

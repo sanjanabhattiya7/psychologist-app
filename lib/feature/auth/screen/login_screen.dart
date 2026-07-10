@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:psycholoist/feature/auth/screen/signup_screen.dart';
 import 'package:psycholoist/theme/text.dart';
 import 'package:psycholoist/feature/auth/screen/email_screen.dart';
+import 'package:psycholoist/feature/auth/screen/otpverification_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -161,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) =>const SignupScreen(),),
+                      MaterialPageRoute(builder: (context) =>const OtpverificationScreen(),),
                       );
                   },
                   child: Text(
@@ -179,13 +180,21 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
 
             const SizedBox(height: 260),
-            Text(
-              "Don’t have account? Sign Up ",
-              style: TextStyle(fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFF4D525F),
-              fontFamily: "AlegreyaSans-Bold"), 
-            
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignupScreen(),),
+                  );
+              },
+              child: Text(
+                "Don’t have account? Sign Up ",
+                style: TextStyle(fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF4D525F),
+                fontFamily: "AlegreyaSans-Bold"), 
+              
+              ),
             ),
           ],
         ),

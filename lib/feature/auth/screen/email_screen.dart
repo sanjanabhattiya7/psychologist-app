@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:psycholoist/feature/auth/screen/emailverification_screen.dart';
 import 'package:psycholoist/feature/auth/screen/signup_screen.dart';
 import 'package:psycholoist/theme/text.dart';
-import 'package:psycholoist/feature/auth/screen/email_screen.dart';
+// import 'package:psycholoist/feature/auth/screen/email_screen.dart';
 import 'package:psycholoist/feature/auth/screen/login_screen.dart';
+import 'package:psycholoist/feature/auth/screen/forgetpassword_screen.dart';
 
 
 class EmailScreen extends StatefulWidget {
@@ -159,37 +161,50 @@ class _EmailScreenState extends State<EmailScreen> {
 
             CustomButton(text: "Sign In", 
             onTap: () {
-              // Navigator.pushReplacement(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => )
-              //   );
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => EmailverificationScreen(),),
+                );
             },
             ),
 
             const SizedBox(height: 20),
 
-            Text("Forget Password?",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFF2D5356),
-              fontFamily: "AlegreyaSans",
-            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => ForgetpasswordScreen(),),
+                  );
+              },
+              child: Text("Forget Password?",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF2D5356),
+                fontFamily: "AlegreyaSans",
+              ),
+              ),
             ),
 
 
             const SizedBox(height: 200),
-            Text(
-              "Don’t have account? Sign Up ",
-              style: TextStyle(fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFF4D525F),
-              fontFamily: "AlegreyaSans-Bold"), 
-            
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignupScreen(),), 
+                                              );
+              },
+              child: Text(
+                "Don’t have account? Sign Up ",
+                style: TextStyle(fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF4D525F),
+                fontFamily: "AlegreyaSans-Bold"), 
+              
+              ),
             ),
-
-
-
           ],
          ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:psycholoist/feature/auth/screen/email_screen.dart';
 import 'package:psycholoist/theme/text.dart';
 import 'package:psycholoist/feature/auth/screen/emailverification_screen.dart';
 
@@ -31,7 +32,10 @@ class _ForgetpasswordScreenState extends State<ForgetpasswordScreen> {
               child: IconButton(
                 icon: const Icon(Icons.arrow_back, color: Color(0xFF2D5356)),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => EmailScreen(),),
+                    );
                 },
               ),
             ),

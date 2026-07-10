@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:psycholoist/feature/auth/screen/login_screen.dart';
 import 'package:psycholoist/feature/auth/screen/otpverification_screen.dart';
 import 'package:psycholoist/theme/text.dart';
+import 'package:psycholoist/feature/auth/screen/login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -100,13 +101,20 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
 
             const SizedBox(height: 120),
-            Text(
-              "Already have account? Sign In ",
-              style: TextStyle(fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFF4D525F),
-              fontFamily: "AlegreyaSans-Bold"), 
-            
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen(),),
+                  );
+              },
+              child: Text(
+                "Already have account? Sign In ",
+                style: TextStyle(fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF4D525F),
+                fontFamily: "AlegreyaSans-Bold"),
+              ),
             ),
           ],
         ),

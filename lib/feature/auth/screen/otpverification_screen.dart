@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:psycholoist/theme/text.dart';
-import 'package:psycholoist/feature/auth/screen/forgetpassword_screen.dart';
+// import 'package:psycholoist/feature/auth/screen/forgetpassword_screen.dart';
+import 'package:psycholoist/feature/auth/screen/login_screen.dart';
+import 'package:psycholoist/feature/Home/screen/home_screen.dart';
 
 class OtpverificationScreen extends StatefulWidget {
   const OtpverificationScreen({super.key});
@@ -31,7 +33,10 @@ class _OtpverificationScreenState extends State<OtpverificationScreen> {
               child: IconButton(
                 icon: const Icon(Icons.arrow_back, color: Color(0xFF2D5356)),
                 onPressed: () {
-                  Navigator.pop(context);
+                 Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen(),), 
+                  );
                 },
               ),
             ),
@@ -116,7 +121,7 @@ class _OtpverificationScreenState extends State<OtpverificationScreen> {
               onTap: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => ForgetpasswordScreen(),),
+                  MaterialPageRoute(builder: (context) => HomeScreen(),),
                   );
               },
             ),
