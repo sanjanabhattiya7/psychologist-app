@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:psycholoist/feature/auth/screen/login_screen.dart';
+// import 'package:psycholoist/feature/auth/screen/login_screen.dart';
+import 'package:psycholoist/feature/auth/screen/otpverification_screen.dart';
 import 'package:psycholoist/theme/text.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -92,7 +93,7 @@ class _SignupScreenState extends State<SignupScreen> {
                Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LoginScreen(),
+                  builder: (context) => OtpverificationScreen(),
                   ),
                 );
              },
